@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,75 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="nPp-m9-3fT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="hvP-xR-g92">
+                                <rect key="frame" x="16" y="30" width="382" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="IKw-6L-ztp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm8-yz-eHQ">
+                                <rect key="frame" x="16" y="210" width="382" height="215"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="90"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTR-LG-iWJ">
+                                <rect key="frame" x="77" y="457" width="259" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NTR-LG-iWJ" secondAttribute="height" multiplier="1:1" id="2d1-nw-fQe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
+                                <state key="normal" title="Start" backgroundImage="stopButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4tB-1k-kiA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hvP-xR-g92" secondAttribute="trailing" constant="16" id="1fr-IP-afO"/>
+                            <constraint firstItem="Nm8-yz-eHQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3n6-8q-KsU"/>
+                            <constraint firstItem="NTR-LG-iWJ" firstAttribute="top" secondItem="Nm8-yz-eHQ" secondAttribute="bottom" constant="32" id="5Xu-PB-PsY"/>
+                            <constraint firstItem="nPp-m9-3fT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8a1-Zb-OWv"/>
+                            <constraint firstItem="NTR-LG-iWJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="GEZ-vS-49o"/>
+                            <constraint firstItem="hvP-xR-g92" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="Nb0-8K-NQF"/>
+                            <constraint firstItem="nPp-m9-3fT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Owd-7o-RSS"/>
+                            <constraint firstItem="nPp-m9-3fT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W7t-2l-BIO"/>
+                            <constraint firstItem="Nm8-yz-eHQ" firstAttribute="top" secondItem="hvP-xR-g92" secondAttribute="bottom" id="ZPk-5s-zRg"/>
+                            <constraint firstItem="hvP-xR-g92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aLO-Ug-623"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NTR-LG-iWJ" secondAttribute="trailing" constant="78" id="g4X-VA-1xd"/>
+                            <constraint firstAttribute="bottom" secondItem="nPp-m9-3fT" secondAttribute="bottom" id="kDa-3g-1HM"/>
+                            <constraint firstAttribute="bottom" secondItem="NTR-LG-iWJ" secondAttribute="bottom" constant="20" id="rRw-Ch-Kjn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nm8-yz-eHQ" secondAttribute="trailing" constant="16" id="rrT-Af-MTO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Nm8-yz-eHQ" id="nbG-eM-e8i"/>
+                        <outlet property="startButton" destination="NTR-LG-iWJ" id="5ah-tV-U6f"/>
+                        <outlet property="trafficLight" destination="hvP-xR-g92" id="htW-8t-BN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1600" height="900"/>
+        <image name="stopButton" width="1000" height="1000"/>
+        <image name="trafficLight" width="1500" height="600"/>
+    </resources>
 </document>
